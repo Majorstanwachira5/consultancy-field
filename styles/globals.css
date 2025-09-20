@@ -1,0 +1,68 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Professional branding tokens */
+:root{
+  --brand-blue: #2563eb;
+  --brand-blue-dark: #1d4ed8;
+  --brand-green: #10b981;
+  --brand-orange: #f59e0b;
+  --brand-purple: #8b5cf6;
+}
+
+body { 
+  background: #f8fafc; 
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.header { 
+  background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-blue-dark) 100%); 
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.footer { 
+  background: #0f172a; 
+  color: #e6eef8; 
+}
+
+/* Custom components */
+.btn-primary {
+  @apply bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors shadow-md;
+}
+
+.btn-secondary {
+  @apply border-2 border-primary text-primary px-6 py-3 rounded-lg font-medium hover:bg-primary hover:text-white transition-colors;
+}
+
+.card {
+  @apply bg-white rounded-xl shadow-lg p-6 border border-gray-100;
+}
+
+.section-padding {
+  @apply py-16 px-6;
+}
+
+.container {
+  @apply max-w-6xl mx-auto;
+}
+
+/* Icons and visual elements */
+.icon-check {
+  @apply w-5 h-5 text-green-500;
+}
+
+.icon-shield {
+  @apply w-6 h-6 text-primary;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

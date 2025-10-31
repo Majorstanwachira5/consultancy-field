@@ -1,11 +1,9 @@
-let users = global.__USERS = global.__USERS || []
+import { withAuth } from '../../../lib/middleware'
 
-export default function handler(req, res) {
-  const s = global.__SESSION || null
-  if (!s) {
-    res.json({ user: null })
-  } else {
-    const u = users.find(x => x.id === s.userId)
-    res.json({ user: u ? { id: u.id, name: u.name, email: u.email } : null })
+export default withAuth(async (req, res) => {
+  if (req.method !== 'GET') {
+    return res.status(405).json({ error: 'Method not allowed' })
   }
-}
+
+  res.json({ user: req.user })
+})

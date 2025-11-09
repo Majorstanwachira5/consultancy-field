@@ -18,8 +18,16 @@ export default function AdminRequests() {
   }, [])
 
   async function fetchRequests() {
-    // Mock data - replace with actual API
-    const mockRequests = [
+    try {
+      const res = await fetch('/api/service-requests')
+      const data = await res.json()
+      if (data.requests) {
+        setRequests(data.requests)
+      }
+    } catch (error) {
+      console.error('Failed to fetch requests:', error)
+      // Fallback to mock data
+      const mockRequests = [
       {
         id: 1,
         type: 'Website Development',
@@ -88,8 +96,10 @@ export default function AdminRequests() {
       }
     ]
     
-    setRequests(mockRequests)
-    setLoading(false)
+      setRequests(mockRequests)
+    } finally {
+      setLoading(false)
+    }
   }
 
   async function updateRequestStatus(requestId, newStatus) {

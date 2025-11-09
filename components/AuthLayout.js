@@ -56,15 +56,15 @@ export default function AuthLayout({ children }) {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="w-full h-screen bg-gray-50 flex flex-col">
       {/* Top Navigation */}
-      <nav className="bg-white shadow-sm border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav className="bg-white shadow-sm border-b border-gray-200 w-full flex-shrink-0">
+        <div className="w-full px-4">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <button
                 onClick={() => setSidebarOpen(!sidebarOpen)}
-                className="p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 lg:hidden"
+                className="p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 lg:hidden transition-colors"
               >
                 <span className="sr-only">Open sidebar</span>
                 ☰
@@ -81,7 +81,7 @@ export default function AuthLayout({ children }) {
                   <div className="relative">
                     <button
                       onClick={() => router.push('/app/profile')}
-                      className="flex items-center space-x-3 text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                      className="flex items-center space-x-3 text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all"
                     >
                       <div className="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center text-white font-medium">
                         {user.firstName?.[0]}{user.lastName?.[0]}
@@ -94,8 +94,8 @@ export default function AuthLayout({ children }) {
                 </div>
               ) : (
                 <div className="flex items-center space-x-4">
-                  <a href="/login" className="text-gray-500 hover:text-gray-700">Sign in</a>
-                  <a href="/signup" className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+                  <a href="/login" className="text-gray-500 hover:text-gray-700 transition-colors">Sign in</a>
+                  <a href="/signup" className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors">
                     Sign up
                   </a>
                 </div>
@@ -105,55 +105,74 @@ export default function AuthLayout({ children }) {
         </div>
       </nav>
 
-      <div className="flex h-screen">
+      <div className="flex flex-1 w-full overflow-hidden">
         {/* Sidebar */}
         {user && (
-          <div className={`${sidebarOpen ? 'block' : 'hidden'} lg:block ${sidebarCollapsed ? 'w-16' : 'w-1/5'} bg-gradient-to-b from-blue-50 to-blue-100 shadow-sm border-r border-blue-200 h-full transition-all duration-300`}>
-            <div className="h-full flex flex-col">
-              {/* Collapse Button */}
-              <div className="p-2 border-b border-blue-200">
-                <button
-                  onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
-                  className="w-full flex items-center justify-center p-2 text-blue-600 hover:bg-blue-200 rounded-md transition-colors"
-                >
-                  <span className="text-lg">{sidebarCollapsed ? '→' : '←'}</span>
-                </button>
-              </div>
-              
-              <div className="flex-1 space-y-3 p-4">
-                {navigation.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className={`${
-                      router.pathname === item.href
-                        ? 'bg-blue-200 border-blue-600 text-blue-800 shadow-sm'
-                        : 'border-transparent text-blue-700 hover:bg-blue-200 hover:text-blue-800'
-                    } group flex items-center ${sidebarCollapsed ? 'justify-center px-2' : 'px-4'} py-3 text-base font-medium border-l-4 rounded-r-md transition-all duration-200`}
-                    title={sidebarCollapsed ? item.name : ''}
+          <>
+            {/* Mobile Overlay */}
+            {sidebarOpen && (
+              <div 
+                className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden transition-opacity duration-300"
+                onClick={() => setSidebarOpen(false)}
+              />
+            )}
+            
+            <div className={`
+              ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} 
+              lg:translate-x-0 
+              ${sidebarCollapsed ? 'w-16' : 'w-80'} 
+              lg:${sidebarCollapsed ? 'w-16' : 'w-1/5'}
+              bg-gradient-to-b from-blue-50 to-blue-100 shadow-lg border-r border-blue-200 
+              h-full flex-shrink-0 fixed lg:relative z-50 
+              transition-all duration-300 ease-in-out transform
+            `} style={{width: '100%', maxWidth: sidebarCollapsed ? '64px' : (window.innerWidth < 1024 ? '320px' : '20%')}}>
+              <div className="h-full flex flex-col">
+                {/* Collapse Button */}
+                <div className="p-2 border-b border-blue-200">
+                  <button
+                    onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
+                    className="w-full flex items-center justify-center p-2 text-blue-600 hover:bg-blue-200 rounded-md transition-all duration-200"
                   >
-                    <span className={`text-lg ${sidebarCollapsed ? '' : 'mr-4'}`}>{item.icon}</span>
-                    {!sidebarCollapsed && item.name}
-                  </a>
-                ))}
-              </div>
-              
-              <div className="p-4 border-t border-blue-200">
-                <button
-                  onClick={handleLogout}
-                  className={`w-full flex items-center ${sidebarCollapsed ? 'justify-center px-2' : 'px-4'} py-3 text-base font-medium text-red-600 hover:bg-red-100 rounded-md transition-colors`}
-                  title={sidebarCollapsed ? 'Logout' : ''}
-                >
-                  <span className={`text-lg ${sidebarCollapsed ? '' : 'mr-4'}`}>🚪</span>
-                  {!sidebarCollapsed && 'Logout'}
-                </button>
+                    <span className="text-lg">{sidebarCollapsed ? '→' : '←'}</span>
+                  </button>
+                </div>
+                
+                <div className="flex-1 space-y-3 p-4 overflow-y-auto">
+                  {navigation.map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className={`${
+                        router.pathname === item.href
+                          ? 'bg-blue-200 border-blue-600 text-blue-800 shadow-sm'
+                          : 'border-transparent text-blue-700 hover:bg-blue-200 hover:text-blue-800'
+                      } group flex items-center ${sidebarCollapsed ? 'justify-center px-2' : 'px-4'} py-3 text-base font-medium border-l-4 rounded-r-md transition-all duration-200`}
+                      title={sidebarCollapsed ? item.name : ''}
+                      onClick={() => setSidebarOpen(false)}
+                    >
+                      <span className={`text-lg ${sidebarCollapsed ? '' : 'mr-4'}`}>{item.icon}</span>
+                      {!sidebarCollapsed && item.name}
+                    </a>
+                  ))}
+                </div>
+                
+                <div className="p-4 border-t border-blue-200">
+                  <button
+                    onClick={handleLogout}
+                    className={`w-full flex items-center ${sidebarCollapsed ? 'justify-center px-2' : 'px-4'} py-3 text-base font-medium text-red-600 hover:bg-red-100 rounded-md transition-all duration-200`}
+                    title={sidebarCollapsed ? 'Logout' : ''}
+                  >
+                    <span className={`text-lg ${sidebarCollapsed ? '' : 'mr-4'}`}>🚪</span>
+                    {!sidebarCollapsed && 'Logout'}
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
+          </>
         )}
 
         {/* Main Content */}
-        <div className={`${user ? (sidebarCollapsed ? 'w-[84%]' : 'w-4/5') : 'w-full'} h-full overflow-auto`}>
+        <div className="flex-1 h-full overflow-auto" style={{width: '100%'}}>
           {children}
         </div>
       </div>

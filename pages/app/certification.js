@@ -24,7 +24,7 @@ export default function Certification() {
       name: 'ISO 27001',
       icon: '🔐',
       fullName: 'Information Security Management System',
-      price: '$15,000 - $50,000',
+
       duration: '6-12 months',
       description: 'International standard for information security management systems',
       benefits: [
@@ -59,7 +59,7 @@ export default function Certification() {
       name: 'SOC 2',
       icon: '🛡️',
       fullName: 'Service Organization Control 2',
-      price: '$25,000 - $75,000',
+
       duration: '4-8 months',
       description: 'Audit framework for service organizations handling customer data',
       benefits: [
@@ -94,7 +94,7 @@ export default function Certification() {
       name: 'PCI DSS',
       icon: '💳',
       fullName: 'Payment Card Industry Data Security Standard',
-      price: '$10,000 - $40,000',
+
       duration: '3-6 months',
       description: 'Security standard for organizations handling credit card data',
       benefits: [
@@ -129,7 +129,7 @@ export default function Certification() {
       name: 'HIPAA',
       icon: '🏥',
       fullName: 'Health Insurance Portability and Accountability Act',
-      price: '$8,000 - $30,000',
+
       duration: '2-6 months',
       description: 'Healthcare data privacy and security compliance',
       benefits: [
@@ -164,7 +164,7 @@ export default function Certification() {
       name: 'GDPR',
       icon: '🇪🇺',
       fullName: 'General Data Protection Regulation',
-      price: '$12,000 - $45,000',
+
       duration: '4-8 months',
       description: 'EU data protection and privacy regulation compliance',
       benefits: [
@@ -199,7 +199,7 @@ export default function Certification() {
       name: 'FedRAMP',
       icon: '🏛️',
       fullName: 'Federal Risk and Authorization Management Program',
-      price: '$100,000 - $500,000',
+
       duration: '12-24 months',
       description: 'US government cloud security authorization program',
       benefits: [
@@ -263,7 +263,7 @@ export default function Certification() {
                 <div className="text-4xl mb-3">{cert.icon}</div>
                 <h3 className="text-xl font-bold mb-1">{cert.name}</h3>
                 <p className="text-sm text-gray-600 mb-2">{cert.fullName}</p>
-                <div className="text-yellow-600 font-semibold">{cert.price}</div>
+
                 <div className="text-sm text-gray-500">{cert.duration}</div>
               </div>
               <p className="text-gray-700 text-sm text-center">{cert.description}</p>

@@ -15,21 +15,21 @@ export default function WebsiteBuilder() {
     {
       id: 'basic',
       name: 'Basic Website',
-      price: '$2,500',
+
       features: ['5 Pages', 'Responsive Design', 'Contact Form', 'Basic SEO', '3 Months Support'],
       description: 'Perfect for small businesses and personal websites'
     },
     {
       id: 'business',
       name: 'Business Website',
-      price: '$5,000',
+
       features: ['10 Pages', 'E-commerce Ready', 'CMS Integration', 'Advanced SEO', 'Analytics', '6 Months Support'],
       description: 'Ideal for growing businesses with online sales'
     },
     {
       id: 'enterprise',
       name: 'Enterprise Solution',
-      price: '$10,000+',
+
       features: ['Unlimited Pages', 'Custom Development', 'API Integration', 'Security Audit', 'Performance Optimization', '12 Months Support'],
       description: 'Complete solution for large organizations'
     }
@@ -64,7 +64,7 @@ export default function WebsiteBuilder() {
             >
               <div className="text-center">
                 <h3 className="text-xl font-semibold mb-2">{pkg.name}</h3>
-                <div className="text-3xl font-bold text-blue-600 mb-4">{pkg.price}</div>
+
                 <p className="text-gray-600 text-sm mb-4">{pkg.description}</p>
                 <ul className="text-left space-y-2">
                   {pkg.features.map((feature, index) => (

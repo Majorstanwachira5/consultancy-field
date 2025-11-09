@@ -18,15 +18,24 @@ export default function AdminDashboard() {
   }, [])
 
   async function fetchDashboardData() {
-    // Mock data - replace with actual API calls
-    setStats({
-      totalUsers: 1247,
-      activeProjects: 23,
-      pendingRequests: 8,
-      monthlyRevenue: 125000,
-      newUsersThisMonth: 89,
-      completedProjects: 156
-    })
+    try {
+      const res = await fetch('/api/admin/stats')
+      const data = await res.json()
+      if (data.stats) {
+        setStats(data.stats)
+      }
+    } catch (error) {
+      console.error('Failed to fetch stats:', error)
+      // Fallback to mock data
+      setStats({
+        totalUsers: 1247,
+        activeProjects: 23,
+        pendingRequests: 8,
+        monthlyRevenue: 125000,
+        newUsersThisMonth: 89,
+        completedProjects: 156
+      })
+    }
 
     setRecentActivity([
       { id: 1, type: 'New User Registration', user: 'John Smith', time: '2 minutes ago', status: 'success' },

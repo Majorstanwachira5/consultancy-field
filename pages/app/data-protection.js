@@ -17,7 +17,7 @@ export default function DataProtection() {
       name: 'GDPR Compliance',
       icon: '🇪🇺',
       description: 'Complete GDPR compliance assessment and implementation',
-      price: 'From $3,000',
+
       features: ['Data Mapping', 'Privacy Impact Assessment', 'Policy Development', 'Staff Training']
     },
     {
@@ -25,7 +25,7 @@ export default function DataProtection() {
       name: 'Data Protection Impact Assessment',
       icon: '📊',
       description: 'Comprehensive DPIA for high-risk processing activities',
-      price: 'From $1,500',
+
       features: ['Risk Assessment', 'Mitigation Strategies', 'Documentation', 'Ongoing Monitoring']
     },
     {
@@ -33,7 +33,7 @@ export default function DataProtection() {
       name: 'Data Protection Audit',
       icon: '🔍',
       description: 'Full audit of your data protection practices',
-      price: 'From $2,500',
+
       features: ['Compliance Review', 'Gap Analysis', 'Recommendations', 'Action Plan']
     },
     {
@@ -41,7 +41,7 @@ export default function DataProtection() {
       name: 'Staff Training Program',
       icon: '🎓',
       description: 'Comprehensive data protection training for your team',
-      price: 'From $800',
+
       features: ['Custom Curriculum', 'Interactive Sessions', 'Certification', 'Ongoing Support']
     }
   ]
@@ -89,12 +89,9 @@ export default function DataProtection() {
               }`}
               onClick={() => setSelectedService(service.id)}
             >
-              <div className="flex justify-between items-start mb-4">
-                <div className="flex items-center">
-                  <span className="text-2xl mr-3">{service.icon}</span>
-                  <h3 className="text-lg font-semibold">{service.name}</h3>
-                </div>
-                <span className="text-sm font-medium text-red-600">{service.price}</span>
+              <div className="flex items-start mb-4">
+                <span className="text-2xl mr-3">{service.icon}</span>
+                <h3 className="text-lg font-semibold">{service.name}</h3>
               </div>
               <p className="text-gray-600 text-sm mb-4">{service.description}</p>
               <ul className="space-y-2">

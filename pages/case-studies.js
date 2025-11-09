@@ -4,8 +4,9 @@ export default function CaseStudies(){
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-r from-primary to-primary-dark text-white">
-        <div className="container text-center">
+      <section className="section-padding bg-gradient-to-r from-primary to-primary-dark text-white relative">
+        <img src="/logo4.png" alt="DataProtect Co." className="absolute inset-0 w-full h-full object-contain opacity-3" />
+        <div className="container text-center relative z-10">
           <h1 className="text-4xl font-bold mb-4">Success Stories</h1>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">Real results from real clients. See how we've helped organizations achieve compliance and build customer trust.</p>
         </div>
@@ -202,51 +203,66 @@ export default function CaseStudies(){
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="card">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+            <div className="bg-white rounded-lg overflow-hidden hover:scale-105 transition-all duration-300 transform">
+              <div className="h-48 bg-cover bg-center relative" style={{backgroundImage: "url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"}}>
+                <div className="absolute inset-0 bg-blue-600 bg-opacity-20"></div>
+                <div className="absolute top-4 left-4 w-12 h-12 bg-white rounded-full flex items-center justify-center">
                   <span className="text-xl">👨💼</span>
                 </div>
-                <div>
-                  <h4 className="font-semibold">James Mitchell</h4>
-                  <p className="text-sm text-gray-600">CTO, TechCorp</p>
-                </div>
               </div>
-              <p className="text-gray-600 italic">"DataProtect Co. transformed our approach to data protection. Their expertise and practical guidance helped us achieve compliance while improving our operational efficiency."</p>
-              <div className="flex text-yellow-400 mt-4">
-                ⭐⭐⭐⭐⭐
+              <div className="p-6">
+                <div className="flex items-center gap-4 mb-4">
+                  <div>
+                    <h4 className="font-semibold">James Mitchell</h4>
+                    <p className="text-sm text-gray-600">CTO, TechCorp</p>
+                  </div>
+                </div>
+                <p className="text-gray-600 italic mb-4">"DataProtect Co. transformed our approach to data protection. Their expertise and practical guidance helped us achieve compliance while improving our operational efficiency."</p>
+                <div className="flex text-yellow-400">
+                  ⭐⭐⭐⭐⭐
+                </div>
               </div>
             </div>
             
-            <div className="card">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+            <div className="bg-white rounded-lg overflow-hidden hover:scale-105 transition-all duration-300 transform">
+              <div className="h-48 bg-cover bg-center relative" style={{backgroundImage: "url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"}}>
+                <div className="absolute inset-0 bg-green-600 bg-opacity-20"></div>
+                <div className="absolute top-4 left-4 w-12 h-12 bg-white rounded-full flex items-center justify-center">
                   <span className="text-xl">👩💼</span>
                 </div>
-                <div>
-                  <h4 className="font-semibold">Sarah Davis</h4>
-                  <p className="text-sm text-gray-600">Compliance Director, SecureBank</p>
-                </div>
               </div>
-              <p className="text-gray-600 italic">"Outstanding service and expertise. The team's knowledge of both regulatory requirements and practical implementation is unmatched."</p>
-              <div className="flex text-yellow-400 mt-4">
-                ⭐⭐⭐⭐⭐
+              <div className="p-6">
+                <div className="flex items-center gap-4 mb-4">
+                  <div>
+                    <h4 className="font-semibold">Sarah Davis</h4>
+                    <p className="text-sm text-gray-600">Compliance Director, SecureBank</p>
+                  </div>
+                </div>
+                <p className="text-gray-600 italic mb-4">"Outstanding service and expertise. The team's knowledge of both regulatory requirements and practical implementation is unmatched."</p>
+                <div className="flex text-yellow-400">
+                  ⭐⭐⭐⭐⭐
+                </div>
               </div>
             </div>
             
-            <div className="card">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+            <div className="bg-white rounded-lg overflow-hidden hover:scale-105 transition-all duration-300 transform">
+              <div className="h-48 bg-cover bg-center relative" style={{backgroundImage: "url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"}}>
+                <div className="absolute inset-0 bg-red-600 bg-opacity-20"></div>
+                <div className="absolute top-4 left-4 w-12 h-12 bg-white rounded-full flex items-center justify-center">
                   <span className="text-xl">👨⚕️</span>
                 </div>
-                <div>
-                  <h4 className="font-semibold">Dr. Robert Chen</h4>
-                  <p className="text-sm text-gray-600">Medical Director, HealthTech</p>
-                </div>
               </div>
-              <p className="text-gray-600 italic">"Professional, thorough, and results-driven. DataProtect Co. helped us navigate complex healthcare regulations with confidence."</p>
-              <div className="flex text-yellow-400 mt-4">
-                ⭐⭐⭐⭐⭐
+              <div className="p-6">
+                <div className="flex items-center gap-4 mb-4">
+                  <div>
+                    <h4 className="font-semibold">Dr. Robert Chen</h4>
+                    <p className="text-sm text-gray-600">Medical Director, HealthTech</p>
+                  </div>
+                </div>
+                <p className="text-gray-600 italic mb-4">"Professional, thorough, and results-driven. DataProtect Co. helped us navigate complex healthcare regulations with confidence."</p>
+                <div className="flex text-yellow-400">
+                  ⭐⭐⭐⭐⭐
+                </div>
               </div>
             </div>
           </div>

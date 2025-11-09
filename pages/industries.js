@@ -4,8 +4,9 @@ export default function Industries(){
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-r from-primary to-primary-dark text-white">
-        <div className="container text-center">
+      <section className="section-padding bg-gradient-to-r from-primary to-primary-dark text-white relative">
+        <img src="/logo4.png" alt="DataProtect Co." className="absolute inset-0 w-full h-full object-contain opacity-3" />
+        <div className="container text-center relative z-10">
           <h1 className="text-4xl font-bold mb-4">Industry Expertise</h1>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">Specialized data protection solutions tailored to your industry's unique challenges and regulatory requirements.</p>
         </div>
@@ -97,19 +98,24 @@ export default function Industries(){
             </div>
 
             {/* Government */}
-            <div className="card hover:shadow-xl transition-shadow">
-              <div className="w-16 h-16 bg-red-100 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-2xl">🏛️</span>
+            <div className="bg-white rounded-lg overflow-hidden hover:scale-105 transition-all duration-300 transform">
+              <div className="h-48 bg-cover bg-center relative" style={{backgroundImage: "url('https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"}}>
+                <div className="absolute inset-0 bg-red-600 bg-opacity-20"></div>
+                <div className="absolute top-4 left-4 w-12 h-12 bg-white rounded-full flex items-center justify-center">
+                  <span className="text-2xl">🏛️</span>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-3">Government & Public Sector</h3>
-              <p className="text-gray-600 mb-4">Citizen data protection, transparency requirements, and public service delivery.</p>
-              <ul className="text-sm text-gray-600 space-y-1 mb-4">
-                <li>• Citizen privacy rights</li>
-                <li>• Digital government services</li>
-                <li>• Public procurement compliance</li>
-                <li>• Inter-agency data sharing</li>
-              </ul>
-              <a href="/contact" className="text-primary font-medium hover:underline">Learn More →</a>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-3">Government & Public Sector</h3>
+                <p className="text-gray-600 mb-4">Citizen data protection, transparency requirements, and public service delivery.</p>
+                <ul className="text-sm text-gray-600 space-y-1 mb-4">
+                  <li>• Citizen privacy rights</li>
+                  <li>• Digital government services</li>
+                  <li>• Public procurement compliance</li>
+                  <li>• Inter-agency data sharing</li>
+                </ul>
+                <a href="/contact" className="text-primary font-medium hover:underline">Learn More →</a>
+              </div>
             </div>
 
           </div>

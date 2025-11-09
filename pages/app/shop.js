@@ -132,7 +132,7 @@ export default function Shop() {
                   <div className="text-center mb-4">
                     <div className="text-4xl mb-2">{product.image}</div>
                     <h3 className="text-lg font-semibold mb-2">{product.name}</h3>
-                    <div className="text-2xl font-bold text-blue-600 mb-2">${product.price}</div>
+
                     <p className="text-gray-600 text-sm mb-4">{product.description}</p>
                   </div>
                   

@@ -4,8 +4,9 @@ export default function Contact(){
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-r from-primary to-primary-dark text-white">
-        <div className="container text-center">
+      <section className="section-padding bg-gradient-to-r from-primary to-primary-dark text-white relative">
+        <img src="/logo4.png" alt="DataProtect Co." className="absolute inset-0 w-full h-full object-contain opacity-3" />
+        <div className="container text-center relative z-10">
           <h1 className="text-4xl font-bold mb-4">Get in Touch</h1>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">Ready to secure your data and achieve compliance? Let's discuss how we can help your organization succeed.</p>
         </div>

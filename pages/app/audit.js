@@ -23,7 +23,7 @@ export default function AuditCompliance() {
       id: 'security',
       name: 'Security Audit',
       icon: '🔒',
-      price: '$3,500 - $15,000',
+
       duration: '2-6 weeks',
       description: 'Comprehensive security assessment of your IT infrastructure',
       includes: [
@@ -41,7 +41,7 @@ export default function AuditCompliance() {
       id: 'compliance',
       name: 'Compliance Audit',
       icon: '📋',
-      price: '$2,500 - $12,000',
+
       duration: '1-4 weeks',
       description: 'Regulatory compliance assessment for various standards',
       includes: [
@@ -59,7 +59,7 @@ export default function AuditCompliance() {
       id: 'operational',
       name: 'Operational Audit',
       icon: '⚙️',
-      price: '$4,000 - $20,000',
+
       duration: '3-8 weeks',
       description: 'Business process and operational efficiency audit',
       includes: [
@@ -77,7 +77,7 @@ export default function AuditCompliance() {
       id: 'financial',
       name: 'Financial Systems Audit',
       icon: '💰',
-      price: '$5,000 - $25,000',
+
       duration: '4-10 weeks',
       description: 'Financial controls and systems audit',
       includes: [
@@ -142,8 +142,7 @@ export default function AuditCompliance() {
                 <span className="text-3xl mr-4">{audit.icon}</span>
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold mb-2">{audit.name}</h3>
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-purple-600 font-medium">{audit.price}</span>
+                  <div className="flex justify-end items-center mb-2">
                     <span className="text-sm text-gray-500">{audit.duration}</span>
                   </div>
                   <p className="text-gray-600 text-sm mb-4">{audit.description}</p>

@@ -51,3 +51,40 @@ model Session {
   
   @@map("sessions")
 }
+
+model Project {
+  id          String   @id @default(cuid())
+  title       String
+  client      String
+  service     String
+  status      String   @default("Planning")
+  priority    String   @default("Medium")
+  startDate   DateTime
+  dueDate     DateTime
+  budget      Int
+  progress    Int      @default(0)
+  assignedTo  String?
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  @@map("projects")
+}
+
+model ServiceRequest {
+  id          String   @id @default(cuid())
+  type        String
+  client      String
+  email       String
+  phone       String?
+  status      String   @default("New")
+  priority    String   @default("Medium")
+  budget      String?
+  timeline    String?
+  description String?
+  requirements String?
+  submittedAt DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  @@map("service_requests")
+}

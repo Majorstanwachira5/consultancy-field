@@ -17,8 +17,16 @@ export default function AdminProjects() {
   }, [])
 
   async function fetchProjects() {
-    // Mock data - replace with actual API
-    const mockProjects = [
+    try {
+      const res = await fetch('/api/projects')
+      const data = await res.json()
+      if (data.projects) {
+        setProjects(data.projects)
+      }
+    } catch (error) {
+      console.error('Failed to fetch projects:', error)
+      // Fallback to mock data
+      const mockProjects = [
       {
         id: 1,
         title: 'GDPR Compliance Implementation',
@@ -77,8 +85,10 @@ export default function AdminProjects() {
       }
     ]
     
-    setProjects(mockProjects)
-    setLoading(false)
+      setProjects(mockProjects)
+    } finally {
+      setLoading(false)
+    }
   }
 
   const filteredProjects = projects.filter(project => {

@@ -11,7 +11,9 @@
     "db:push": "prisma db push",
     "db:seed": "node prisma/seed.js",
     "db:studio": "prisma studio",
-    "test:api": "node scripts/test-api.js"
+    "test:api": "node scripts/test-api.js",
+    "db:reset": "prisma migrate reset --force && npm run db:seed",
+    "setup:complete": "npm install && npm run db:setup && echo 'Setup complete! Admin: admin@dataprotect.com / AdminPass123'"
   },
   "dependencies": {
     "next": "^15.5.3",

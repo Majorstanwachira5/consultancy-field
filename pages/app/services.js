@@ -11,8 +11,9 @@ export default function Services() {
       icon: '🌐',
       description: 'Professional website development from concept to deployment',
       features: ['Custom Design', 'Responsive Layout', 'SEO Optimization', 'CMS Integration'],
-      pricing: 'From $2,500',
-      color: 'blue'
+
+      color: 'blue',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop'
     },
     {
       id: 'devops',
@@ -20,8 +21,9 @@ export default function Services() {
       icon: '⚙️',
       description: 'Infrastructure optimization and deployment automation',
       features: ['CI/CD Pipelines', 'Cloud Migration', 'Monitoring Setup', 'Security Integration'],
-      pricing: 'From $150/hour',
-      color: 'green'
+
+      color: 'green',
+      image: 'https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=400&h=250&fit=crop'
     },
     {
       id: 'data-protection',
@@ -29,8 +31,9 @@ export default function Services() {
       icon: '🔒',
       description: 'Comprehensive data protection and privacy compliance',
       features: ['GDPR Compliance', 'Privacy Audits', 'Policy Development', 'Staff Training'],
-      pricing: 'From $1,500',
-      color: 'red'
+
+      color: 'red',
+      image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=250&fit=crop'
     },
     {
       id: 'audit',
@@ -38,8 +41,9 @@ export default function Services() {
       icon: '🔍',
       description: 'Thorough security assessments and compliance audits',
       features: ['Vulnerability Assessment', 'Compliance Review', 'Risk Analysis', 'Remediation Plan'],
-      pricing: 'From $2,000',
-      color: 'purple'
+
+      color: 'purple',
+      image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop'
     },
     {
       id: 'certification',
@@ -47,8 +51,9 @@ export default function Services() {
       icon: '🏆',
       description: 'Support for various industry certifications',
       features: ['ISO 27001', 'SOC 2', 'PCI DSS', 'HIPAA Compliance'],
-      pricing: 'From $3,000',
-      color: 'yellow'
+
+      color: 'yellow',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop'
     },
     {
       id: 'training',
@@ -56,8 +61,9 @@ export default function Services() {
       icon: '🎓',
       description: 'Customized training programs for your team',
       features: ['Security Awareness', 'GDPR Training', 'DevOps Practices', 'Custom Curriculum'],
-      pricing: 'From $800',
-      color: 'indigo'
+
+      color: 'indigo',
+      image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&h=250&fit=crop'
     }
   ]
 
@@ -99,18 +105,26 @@ export default function Services() {
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {services.map(service => (
-            <div key={service.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <div className={`p-6 border-t-4 ${getColorClasses(service.color)}`}>
-                <div className="text-center mb-4">
-                  <div className="text-5xl mb-3">{service.icon}</div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{service.name}</h3>
-                  <p className="text-gray-600 text-sm mb-4">{service.description}</p>
-                  <div className={`inline-block px-3 py-1 rounded-full text-sm font-semibold ${getColorClasses(service.color)}`}>
-                    {service.pricing}
-                  </div>
+            <div key={service.id} className="group bg-white rounded-lg overflow-hidden hover:scale-105 transition-all duration-300">
+              <div className="relative h-64 overflow-hidden">
+                <img 
+                  src={service.image} 
+                  alt={service.name}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <button
+                    onClick={() => router.push(`/app/${service.id}`)}
+                    className={`text-white px-6 py-3 rounded-lg font-medium transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 ${getButtonClasses(service.color)}`}
+                  >
+                    Learn More
+                  </button>
                 </div>
-
-                <ul className="space-y-2 mb-6">
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{service.name}</h3>
+                <p className="text-gray-600 mb-4">{service.description}</p>
+                <ul className="space-y-2">
                   {service.features.map((feature, index) => (
                     <li key={index} className="flex items-center text-sm text-gray-700">
                       <span className="text-green-500 mr-2">✓</span>
@@ -118,13 +132,6 @@ export default function Services() {
                     </li>
                   ))}
                 </ul>
-
-                <button
-                  onClick={() => router.push(`/app/${service.id}`)}
-                  className={`w-full text-white py-3 rounded-md font-medium transition-colors ${getButtonClasses(service.color)}`}
-                >
-                  Learn More
-                </button>
               </div>
             </div>
           ))}

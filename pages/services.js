@@ -4,8 +4,9 @@ export default function Services(){
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-r from-primary to-primary-dark text-white">
-        <div className="container text-center">
+      <section className="section-padding bg-gradient-to-r from-primary to-primary-dark text-white relative">
+        <img src="/logo4.png" alt="DataProtect Co." className="absolute inset-0 w-full h-full object-contain opacity-3" />
+        <div className="container text-center relative z-10">
           <h1 className="text-4xl font-bold mb-4">Comprehensive Data Protection Services</h1>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">Expert consultancy services to help your organization achieve compliance, manage risks, and build customer trust.</p>
         </div>
@@ -52,6 +53,13 @@ export default function Services(){
               <a href="/contact" className="btn-primary">Get GDPR Assessment</a>
             </div>
             <div className="card">
+              <div className="relative h-48 overflow-hidden rounded-lg mb-4">
+                <img 
+                  src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=250&fit=crop" 
+                  alt="GDPR Compliance"
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <h3 className="text-xl font-semibold mb-4">What You Get:</h3>
               <ul className="space-y-3 text-gray-600">
                 <li>• Complete compliance audit report</li>
@@ -60,9 +68,7 @@ export default function Services(){
                 <li>• Ongoing compliance monitoring</li>
                 <li>• Breach response procedures</li>
               </ul>
-              <div className="mt-6 p-4 bg-blue-50 rounded-lg">
-                <p className="text-sm text-primary font-medium">Starting from £5,000 for SMEs</p>
-              </div>
+
             </div>
           </div>
         </div>
@@ -73,6 +79,13 @@ export default function Services(){
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="card">
+              <div className="relative h-48 overflow-hidden rounded-lg mb-4">
+                <img 
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop" 
+                  alt="Risk Assessment"
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <h3 className="text-xl font-semibold mb-4">DPIA Process:</h3>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
@@ -134,22 +147,34 @@ export default function Services(){
           
           <div className="grid md:grid-cols-3 gap-8">
             <div className="card text-center">
-              <div className="w-16 h-16 bg-warning/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🔒</span>
+              <div className="relative h-48 overflow-hidden rounded-lg mb-4">
+                <img 
+                  src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop" 
+                  alt="Security Assessment"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h3 className="text-xl font-semibold mb-3">Security Assessment</h3>
               <p className="text-gray-600">Network security, access controls, and vulnerability scanning to identify potential threats.</p>
             </div>
             <div className="card text-center">
-              <div className="w-16 h-16 bg-warning/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">📊</span>
+              <div className="relative h-48 overflow-hidden rounded-lg mb-4">
+                <img 
+                  src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=250&fit=crop" 
+                  alt="Compliance Verification"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h3 className="text-xl font-semibold mb-3">Compliance Verification</h3>
               <p className="text-gray-600">Verify adherence to ISO 27001, SOC 2, and other security frameworks.</p>
             </div>
             <div className="card text-center">
-              <div className="w-16 h-16 bg-warning/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🛠️</span>
+              <div className="relative h-48 overflow-hidden rounded-lg mb-4">
+                <img 
+                  src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=400&h=250&fit=crop" 
+                  alt="Remediation Plan"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h3 className="text-xl font-semibold mb-3">Remediation Plan</h3>
               <p className="text-gray-600">Detailed action plan with prioritized recommendations and implementation guidance.</p>
@@ -186,6 +211,13 @@ export default function Services(){
               </div>
             </div>
             <div className="card">
+              <div className="relative h-48 overflow-hidden rounded-lg mb-4">
+                <img 
+                  src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&h=250&fit=crop" 
+                  alt="Training Programs"
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <h3 className="text-xl font-semibold mb-4">Training Modules:</h3>
               <div className="space-y-3">
                 <div className="p-3 bg-purple/5 rounded-lg">

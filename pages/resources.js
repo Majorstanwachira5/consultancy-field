@@ -4,8 +4,9 @@ export default function Resources(){
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-r from-primary to-primary-dark text-white">
-        <div className="container text-center">
+      <section className="section-padding bg-gradient-to-r from-primary to-primary-dark text-white relative">
+        <img src="/logo4.png" alt="DataProtect Co." className="absolute inset-0 w-full h-full object-contain opacity-3" />
+        <div className="container text-center relative z-10">
           <h1 className="text-4xl font-bold mb-4">Resources & Insights</h1>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">Expert guidance, practical tools, and industry insights to help you navigate the world of data protection.</p>
         </div>
@@ -20,39 +21,54 @@ export default function Resources(){
           </div>
           
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="card hover:shadow-xl transition-shadow">
-              <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-2xl">📋</span>
+            <div className="bg-white rounded-lg overflow-hidden hover:scale-105 transition-all duration-300 transform">
+              <div className="h-48 bg-cover bg-center relative" style={{backgroundImage: "url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"}}>
+                <div className="absolute inset-0 bg-blue-600 bg-opacity-20"></div>
+                <div className="absolute top-4 left-4 w-12 h-12 bg-white rounded-full flex items-center justify-center">
+                  <span className="text-2xl">📋</span>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-3">GDPR Compliance Checklist</h3>
-              <p className="text-gray-600 mb-4">Complete 50-point checklist to ensure your organization meets all GDPR requirements.</p>
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-500">PDF • 12 pages</span>
-                <a href="#" className="bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-primary-dark transition-colors">Download Free</a>
-              </div>
-            </div>
-            
-            <div className="card hover:shadow-xl transition-shadow">
-              <div className="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-2xl">🛡️</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Data Breach Response Plan</h3>
-              <p className="text-gray-600 mb-4">Step-by-step template for managing data breaches and regulatory notifications.</p>
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-500">Template • Word Doc</span>
-                <a href="#" className="bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-primary-dark transition-colors">Download Free</a>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-3">GDPR Compliance Checklist</h3>
+                <p className="text-gray-600 mb-4">Complete 50-point checklist to ensure your organization meets all GDPR requirements.</p>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-500">PDF • 12 pages</span>
+                  <a href="/api/download?resource=gdpr-checklist" className="bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-primary-dark transition-colors" download>Download Free</a>
+                </div>
               </div>
             </div>
             
-            <div className="card hover:shadow-xl transition-shadow">
-              <div className="w-16 h-16 bg-warning/10 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-2xl">📊</span>
+            <div className="bg-white rounded-lg overflow-hidden hover:scale-105 transition-all duration-300 transform">
+              <div className="h-48 bg-cover bg-center relative" style={{backgroundImage: "url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"}}>
+                <div className="absolute inset-0 bg-red-600 bg-opacity-20"></div>
+                <div className="absolute top-4 left-4 w-12 h-12 bg-white rounded-full flex items-center justify-center">
+                  <span className="text-2xl">🛡️</span>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-3">DPIA Assessment Tool</h3>
-              <p className="text-gray-600 mb-4">Interactive tool to conduct comprehensive Data Protection Impact Assessments.</p>
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-500">Excel • Interactive</span>
-                <a href="#" className="bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-primary-dark transition-colors">Download Free</a>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-3">Data Breach Response Plan</h3>
+                <p className="text-gray-600 mb-4">Step-by-step template for managing data breaches and regulatory notifications.</p>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-500">Template • Word Doc</span>
+                  <a href="/api/download?resource=breach-response" className="bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-primary-dark transition-colors" download>Download Free</a>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-lg overflow-hidden hover:scale-105 transition-all duration-300 transform">
+              <div className="h-48 bg-cover bg-center relative" style={{backgroundImage: "url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"}}>
+                <div className="absolute inset-0 bg-yellow-600 bg-opacity-20"></div>
+                <div className="absolute top-4 left-4 w-12 h-12 bg-white rounded-full flex items-center justify-center">
+                  <span className="text-2xl">📊</span>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-3">DPIA Assessment Tool</h3>
+                <p className="text-gray-600 mb-4">Interactive tool to conduct comprehensive Data Protection Impact Assessments.</p>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-500">Excel • Interactive</span>
+                  <a href="/api/download?resource=dpia-tool" className="bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-primary-dark transition-colors" download>Download Free</a>
+                </div>
               </div>
             </div>
           </div>

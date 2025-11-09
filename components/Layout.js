@@ -2,33 +2,35 @@
 export default function Layout({children}){
   return (
     <div className="min-h-screen flex flex-col">
-      <header className="header text-white p-4">
-        <div className="max-w-6xl mx-auto flex items-center justify-between">
+      <header className="header text-white p-4 w-full">
+        <div className="w-full px-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <img src="/logo.svg" alt="DataProtect Co." className="h-8"/>
+            <img src="/logomain.jpeg" alt="DataProtect Co." className="h-8"/>
             <div className="text-sm font-semibold">Trusted Data Protection & Consultancy</div>
           </div>
-          <nav className="hidden md:flex gap-6 items-center">
-            <a href="/" className="text-white/90 hover:text-white transition-colors">Home</a>
-            <a href="/services" className="text-white/90 hover:text-white transition-colors">Services</a>
-            <a href="/about" className="text-white/90 hover:text-white transition-colors">About</a>
-            <a href="/industries" className="text-white/90 hover:text-white transition-colors">Industries</a>
-            <a href="/case-studies" className="text-white/90 hover:text-white transition-colors">Case Studies</a>
-            <a href="/resources" className="text-white/90 hover:text-white transition-colors">Resources</a>
-            <a href="/contact" className="text-white/90 hover:text-white transition-colors">Contact</a>
-            <a href="/login" className="bg-white text-primary px-4 py-2 rounded-md hover:bg-gray-50 transition-colors font-medium">Sign In</a>
-          </nav>
+          <div className="flex items-center space-x-8">
+            <nav className="hidden md:flex items-center space-x-1">
+              <a href="/" className="text-white/90 hover:text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-all duration-300 font-medium">Home</a>
+              <a href="/services" className="text-white/90 hover:text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-all duration-300 font-medium">Services</a>
+              <a href="/about" className="text-white/90 hover:text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-all duration-300 font-medium">About</a>
+              <a href="/industries" className="text-white/90 hover:text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-all duration-300 font-medium">Industries</a>
+              <a href="/case-studies" className="text-white/90 hover:text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-all duration-300 font-medium">Case Studies</a>
+              <a href="/resources" className="text-white/90 hover:text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-all duration-300 font-medium">Resources</a>
+              <a href="/contact" className="text-white/90 hover:text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-all duration-300 font-medium">Contact</a>
+            </nav>
+            <a href="/login" className="bg-white text-primary px-6 py-2 rounded-lg hover:bg-gray-50 transition-all duration-300 font-medium shadow-lg">Sign In</a>
+          </div>
         </div>
       </header>
 
       <main className="flex-1">{children}</main>
 
-      <footer className="footer p-8 mt-12">
-        <div className="max-w-6xl mx-auto">
+      <footer className="footer p-8 mt-12 w-full">
+        <div className="w-full px-4">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <img src="/logo.svg" alt="DataProtect Co." className="h-6"/>
+                <img src="/logomain.jpeg" alt="DataProtect Co." className="h-6"/>
                 <span className="font-semibold">DataProtect Co.</span>
               </div>
               <p className="text-gray-300 text-sm">Professional data protection consultancy helping organizations achieve compliance and build trust.</p>

@@ -5,7 +5,7 @@ export default function Layout({children}){
       <header className="header text-white p-4 w-full">
         <div className="w-full px-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <img src="/logomain.jpeg" alt="DataProtect Co." className="h-8"/>
+            <img src="/logo4.png" alt="DataProtect Co." className="h-8"/>
             <div className="text-sm font-semibold">Trusted Data Protection & Consultancy</div>
           </div>
           <div className="flex items-center space-x-8">
@@ -30,7 +30,7 @@ export default function Layout({children}){
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <img src="/logomain.jpeg" alt="DataProtect Co." className="h-6"/>
+                <img src="/logo4.png" alt="DataProtect Co." className="h-6"/>
                 <span className="font-semibold">DataProtect Co.</span>
               </div>
               <p className="text-gray-300 text-sm">Professional data protection consultancy helping organizations achieve compliance and build trust.</p>

@@ -13,8 +13,14 @@ export default function Contact(){
       </section>
 
       {/* Contact Options */}
-      <section className="section-padding">
-        <div className="container">
+      <section className="section-padding relative">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-4"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80')`
+          }}
+        />
+        <div className="container relative z-10">
           <div className="grid lg:grid-cols-3 gap-8 mb-12">
             <div className="card text-center">
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -217,8 +223,14 @@ export default function Contact(){
       </section>
 
       {/* Office Locations */}
-      <section className="section-padding">
-        <div className="container">
+      <section className="section-padding relative">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-4"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80')`
+          }}
+        />
+        <div className="container relative z-10">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Locations</h2>
             <p className="text-xl text-gray-600">Serving clients across the UK and Europe</p>

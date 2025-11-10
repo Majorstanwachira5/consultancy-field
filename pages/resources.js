@@ -13,8 +13,14 @@ export default function Resources(){
       </section>
 
       {/* Featured Resources */}
-      <section className="section-padding">
-        <div className="container">
+      <section className="section-padding relative">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-4"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80')`
+          }}
+        />
+        <div className="container relative z-10">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Featured Resources</h2>
             <p className="text-xl text-gray-600">Essential guides and tools for data protection professionals</p>
@@ -180,8 +186,14 @@ export default function Resources(){
       </section>
 
       {/* Tools & Calculators */}
-      <section className="section-padding bg-gray-50">
-        <div className="container">
+      <section className="section-padding bg-gray-50 relative">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-4"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80')`
+          }}
+        />
+        <div className="container relative z-10">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Interactive Tools</h2>
             <p className="text-xl text-gray-600">Free tools to assess and improve your data protection posture</p>

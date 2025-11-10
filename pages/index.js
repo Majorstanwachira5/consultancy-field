@@ -36,71 +36,97 @@ export default function Home(){
       </section>
 
       {/* Core Services */}
-      <section className="section-padding w-full">
-        <div className="w-full px-4">
+      <section className="section-padding w-full relative">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-4"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80')`
+          }}
+        />
+        <div className="w-full px-4 relative z-10">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Core Services</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">Comprehensive data protection solutions tailored to your business needs</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-white rounded-lg overflow-hidden hover:scale-105 transition-all duration-300 transform">
-              <div className="h-48 bg-cover bg-center relative" style={{backgroundImage: "url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"}}>
+            <div className="group bg-white/90 rounded-lg overflow-hidden hover:scale-105 transition-all duration-300">
+              <div className="relative h-64 overflow-hidden">
+                <div className="h-full bg-cover bg-center" style={{backgroundImage: "url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"}}></div>
                 <div className="absolute inset-0 bg-blue-600 bg-opacity-20"></div>
                 <img src="/logomain.jpeg" alt="DataProtect Co." className="absolute bottom-4 right-4 w-16 h-16 opacity-20 object-contain" />
                 <div className="absolute top-4 left-4 w-12 h-12 bg-white rounded-full flex items-center justify-center">
                   <span className="text-2xl">🛡️</span>
                 </div>
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-start p-6">
+                  <a href="/services#gdpr" className="text-white px-6 py-3 rounded-lg font-medium bg-primary hover:bg-primary-dark transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                    Learn More
+                  </a>
+                </div>
               </div>
-              <div className="p-6 text-center">
+              <div className="p-6">
                 <h3 className="text-xl font-semibold mb-3 text-gray-900">GDPR Compliance</h3>
-                <p className="text-gray-600 mb-4 text-sm">End-to-end GDPR compliance including legal basis mapping, consent management, cross-border transfer mechanisms, and regulatory liaison.</p>
-                <a href="/services#gdpr" className="text-primary font-medium hover:underline">Learn More →</a>
+                <p className="text-gray-600 text-sm">End-to-end GDPR compliance including legal basis mapping, consent management, cross-border transfer mechanisms, and regulatory liaison.</p>
               </div>
             </div>
             
-            <div className="bg-white rounded-lg overflow-hidden hover:scale-105 transition-all duration-300 transform">
-              <div className="h-48 bg-cover bg-center relative" style={{backgroundImage: "url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"}}>
+            <div className="group bg-white/90 rounded-lg overflow-hidden hover:scale-105 transition-all duration-300">
+              <div className="relative h-64 overflow-hidden">
+                <div className="h-full bg-cover bg-center" style={{backgroundImage: "url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"}}></div>
                 <div className="absolute inset-0 bg-green-600 bg-opacity-20"></div>
                 <img src="/logomain.jpeg" alt="DataProtect Co." className="absolute bottom-4 right-4 w-16 h-16 opacity-20 object-contain" />
                 <div className="absolute top-4 left-4 w-12 h-12 bg-white rounded-full flex items-center justify-center">
                   <span className="text-2xl">📊</span>
                 </div>
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-start p-6">
+                  <a href="/services#risk" className="text-white px-6 py-3 rounded-lg font-medium bg-green-600 hover:bg-green-700 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                    Learn More
+                  </a>
+                </div>
               </div>
-              <div className="p-6 text-center">
+              <div className="p-6">
                 <h3 className="text-xl font-semibold mb-3 text-gray-900">Risk Assessments</h3>
-                <p className="text-gray-600 mb-4 text-sm">Systematic DPIAs, algorithmic impact assessments, vendor risk evaluations, and continuous monitoring frameworks with regulatory reporting.</p>
-                <a href="/services#risk" className="text-primary font-medium hover:underline">Learn More →</a>
+                <p className="text-gray-600 text-sm">Systematic DPIAs, algorithmic impact assessments, vendor risk evaluations, and continuous monitoring frameworks with regulatory reporting.</p>
               </div>
             </div>
             
-            <div className="bg-white rounded-lg overflow-hidden hover:scale-105 transition-all duration-300 transform">
-              <div className="h-48 bg-cover bg-center relative" style={{backgroundImage: "url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"}}>
+            <div className="group bg-white/90 rounded-lg overflow-hidden hover:scale-105 transition-all duration-300">
+              <div className="relative h-64 overflow-hidden">
+                <div className="h-full bg-cover bg-center" style={{backgroundImage: "url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"}}></div>
                 <div className="absolute inset-0 bg-orange-600 bg-opacity-20"></div>
                 <img src="/logomain.jpeg" alt="DataProtect Co." className="absolute bottom-4 right-4 w-16 h-16 opacity-20 object-contain" />
                 <div className="absolute top-4 left-4 w-12 h-12 bg-white rounded-full flex items-center justify-center">
                   <span className="text-2xl">🔍</span>
                 </div>
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-start p-6">
+                  <a href="/services#audit" className="text-white px-6 py-3 rounded-lg font-medium bg-orange-600 hover:bg-orange-700 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                    Learn More
+                  </a>
+                </div>
               </div>
-              <div className="p-6 text-center">
+              <div className="p-6">
                 <h3 className="text-xl font-semibold mb-3 text-gray-900">IT Security Audits</h3>
-                <p className="text-gray-600 mb-4 text-sm">Penetration testing, cloud security assessments, API security reviews, encryption audits, and multi-framework compliance (ISO 27001, SOC 2, NIST).</p>
-                <a href="/services#audit" className="text-primary font-medium hover:underline">Learn More →</a>
+                <p className="text-gray-600 text-sm">Penetration testing, cloud security assessments, API security reviews, encryption audits, and multi-framework compliance (ISO 27001, SOC 2, NIST).</p>
               </div>
             </div>
             
-            <div className="bg-white rounded-lg overflow-hidden hover:scale-105 transition-all duration-300 transform">
-              <div className="h-48 bg-cover bg-center relative" style={{backgroundImage: "url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"}}>
+            <div className="group bg-white/90 rounded-lg overflow-hidden hover:scale-105 transition-all duration-300">
+              <div className="relative h-64 overflow-hidden">
+                <div className="h-full bg-cover bg-center" style={{backgroundImage: "url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"}}></div>
                 <div className="absolute inset-0 bg-purple-600 bg-opacity-20"></div>
                 <img src="/logomain.jpeg" alt="DataProtect Co." className="absolute bottom-4 right-4 w-16 h-16 opacity-20 object-contain" />
                 <div className="absolute top-4 left-4 w-12 h-12 bg-white rounded-full flex items-center justify-center">
                   <span className="text-2xl">⚖️</span>
                 </div>
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-start p-6">
+                  <a href="/services#governance" className="text-white px-6 py-3 rounded-lg font-medium bg-purple-600 hover:bg-purple-700 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                    Learn More
+                  </a>
+                </div>
               </div>
-              <div className="p-6 text-center">
+              <div className="p-6">
                 <h3 className="text-xl font-semibold mb-3 text-gray-900">Data Governance</h3>
-                <p className="text-gray-600 mb-4 text-sm">Data lifecycle management, automated policy enforcement, AI governance frameworks, privacy-by-design integration, and executive dashboards.</p>
-                <a href="/services#governance" className="text-primary font-medium hover:underline">Learn More →</a>
+                <p className="text-gray-600 text-sm">Data lifecycle management, automated policy enforcement, AI governance frameworks, privacy-by-design integration, and executive dashboards.</p>
               </div>
             </div>
           </div>

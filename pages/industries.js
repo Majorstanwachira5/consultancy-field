@@ -13,14 +13,24 @@ export default function Industries(){
       </section>
 
       {/* Industries Grid */}
-      <section className="section-padding">
-        <div className="container">
+      <section className="section-padding relative">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-4"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80')`
+          }}
+        />
+        <div className="container relative z-10">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             
             {/* Financial Services */}
             <div className="card hover:shadow-xl transition-shadow">
-              <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-2xl">🏦</span>
+              <div className="relative h-48 overflow-hidden rounded-lg mb-4">
+                <img 
+                  src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=250&fit=crop" 
+                  alt="Financial Services"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h3 className="text-xl font-semibold mb-3">Financial Services</h3>
               <p className="text-gray-600 mb-4">Banking, insurance, fintech compliance with PCI DSS, Basel III, and local financial regulations.</p>
@@ -35,8 +45,12 @@ export default function Industries(){
 
             {/* Healthcare */}
             <div className="card hover:shadow-xl transition-shadow">
-              <div className="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-2xl">🏥</span>
+              <div className="relative h-48 overflow-hidden rounded-lg mb-4">
+                <img 
+                  src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=250&fit=crop" 
+                  alt="Healthcare"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h3 className="text-xl font-semibold mb-3">Healthcare & Life Sciences</h3>
               <p className="text-gray-600 mb-4">Medical data protection, clinical trial compliance, and health information security.</p>
@@ -51,8 +65,12 @@ export default function Industries(){
 
             {/* Technology */}
             <div className="card hover:shadow-xl transition-shadow">
-              <div className="w-16 h-16 bg-warning/10 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-2xl">💻</span>
+              <div className="relative h-48 overflow-hidden rounded-lg mb-4">
+                <img 
+                  src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=400&h=250&fit=crop" 
+                  alt="Technology"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h3 className="text-xl font-semibold mb-3">Technology & SaaS</h3>
               <p className="text-gray-600 mb-4">Software development, cloud services, and AI/ML privacy compliance.</p>
@@ -67,8 +85,12 @@ export default function Industries(){
 
             {/* E-commerce */}
             <div className="card hover:shadow-xl transition-shadow">
-              <div className="w-16 h-16 bg-purple/10 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-2xl">🛒</span>
+              <div className="relative h-48 overflow-hidden rounded-lg mb-4">
+                <img 
+                  src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop" 
+                  alt="E-commerce"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h3 className="text-xl font-semibold mb-3">E-commerce & Retail</h3>
               <p className="text-gray-600 mb-4">Customer data protection, payment processing, and marketing compliance.</p>
@@ -83,8 +105,12 @@ export default function Industries(){
 
             {/* Education */}
             <div className="card hover:shadow-xl transition-shadow">
-              <div className="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-2xl">🎓</span>
+              <div className="relative h-48 overflow-hidden rounded-lg mb-4">
+                <img 
+                  src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&h=250&fit=crop" 
+                  alt="Education"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h3 className="text-xl font-semibold mb-3">Education</h3>
               <p className="text-gray-600 mb-4">Student data protection, research compliance, and educational technology privacy.</p>

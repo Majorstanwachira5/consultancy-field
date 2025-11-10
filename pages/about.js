@@ -12,8 +12,14 @@ export default function About(){
       </section>
 
       {/* Our Story */}
-      <section className="section-padding">
-        <div className="container">
+      <section className="section-padding relative">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-4"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80')`
+          }}
+        />
+        <div className="container relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
@@ -69,8 +75,14 @@ export default function About(){
       </section>
 
       {/* Team Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container">
+      <section className="section-padding bg-gray-50 relative">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-4"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80')`
+          }}
+        />
+        <div className="container relative z-10">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Meet Our Expert Team</h2>
             <p className="text-xl text-gray-600">Certified professionals dedicated to your data protection success</p>
@@ -120,8 +132,14 @@ export default function About(){
       </section>
 
       {/* Certifications & Partners */}
-      <section className="section-padding">
-        <div className="container">
+      <section className="section-padding relative">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-4"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80')`
+          }}
+        />
+        <div className="container relative z-10">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Certifications & Partnerships</h2>
             <p className="text-xl text-gray-600">Recognized expertise and trusted partnerships</p>

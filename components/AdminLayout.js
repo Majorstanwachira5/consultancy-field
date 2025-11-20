@@ -15,13 +15,13 @@ export default function AdminLayout({ children }) {
     try {
       const res = await fetch('/api/auth/me')
       const data = await res.json()
-      if (data.user && data.user.role.name === 'admin') {
+      if (data.user && data.user.email === process.env.NEXT_PUBLIC_ADMIN_EMAIL) {
         setUser(data.user)
       } else {
-        router.push('/dashboard')
+        router.push('/admin/login')
       }
     } catch (error) {
-      router.push('/login')
+      router.push('/admin/login')
     } finally {
       setLoading(false)
     }
@@ -30,7 +30,7 @@ export default function AdminLayout({ children }) {
   async function handleLogout() {
     try {
       await fetch('/api/auth/logout', { method: 'POST' })
-      router.push('/')
+      router.push('/admin/login')
     } catch (error) {
       console.error('Logout failed:', error)
     }
@@ -38,13 +38,10 @@ export default function AdminLayout({ children }) {
 
   const navigation = [
     { name: 'Dashboard', href: '/admin', icon: '📊' },
-    { name: 'Users', href: '/admin/users', icon: '👥' },
+    { name: 'CRM', href: '/admin/crm', icon: '👥' },
+    { name: 'Content', href: '/admin/content', icon: '📝' },
     { name: 'Projects', href: '/admin/projects', icon: '📁' },
     { name: 'Requests', href: '/admin/requests', icon: '📋' },
-    { name: 'Analytics', href: '/admin/analytics', icon: '📈' },
-    { name: 'Settings', href: '/admin/settings', icon: '⚙️' },
-    { name: 'Reports', href: '/admin/reports', icon: '📄' },
-    { name: 'Billing', href: '/admin/billing', icon: '💰' }
   ]
 
   if (loading) {

@@ -81,9 +81,9 @@ export default function AuthLayout({ children }) {
                   <div className="relative">
                     <button
                       onClick={() => router.push('/app/profile')}
-                      className="flex items-center space-x-3 text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all"
+                      className="flex items-center space-x-3 text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-all"
                     >
-                      <div className="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center text-white font-medium">
+                      <div className="h-8 w-8 rounded-full bg-primary-500 flex items-center justify-center text-white font-medium">
                         {user.firstName?.[0]}{user.lastName?.[0]}
                       </div>
                       <span className="hidden md:block text-gray-700 font-medium">
@@ -95,7 +95,7 @@ export default function AuthLayout({ children }) {
               ) : (
                 <div className="flex items-center space-x-4">
                   <a href="/login" className="text-gray-500 hover:text-gray-700 transition-colors">Sign in</a>
-                  <a href="/signup" className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors">
+                  <a href="/signup" className="bg-primary-600 text-white px-4 py-2 rounded-md hover:bg-primary-700 transition-colors">
                     Sign up
                   </a>
                 </div>
@@ -122,16 +122,16 @@ export default function AuthLayout({ children }) {
               lg:translate-x-0 
               ${sidebarCollapsed ? 'w-16' : 'w-80'} 
               lg:${sidebarCollapsed ? 'w-16' : 'w-1/5'}
-              bg-gradient-to-b from-blue-50 to-blue-100 shadow-lg border-r border-blue-200 
+              bg-gradient-to-b from-primary-50 to-primary-100 shadow-lg border-r border-primary-200 
               h-full flex-shrink-0 fixed lg:relative z-50 
               transition-all duration-300 ease-in-out transform
             `} style={{width: '100%', maxWidth: sidebarCollapsed ? '64px' : (window.innerWidth < 1024 ? '320px' : '20%')}}>
               <div className="h-full flex flex-col">
                 {/* Collapse Button */}
-                <div className="p-2 border-b border-blue-200">
+                <div className="p-2 border-b border-primary-200">
                   <button
                     onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
-                    className="w-full flex items-center justify-center p-2 text-blue-600 hover:bg-blue-200 rounded-md transition-all duration-200"
+                    className="w-full flex items-center justify-center p-2 text-primary-600 hover:bg-primary-200 rounded-md transition-all duration-200"
                   >
                     <span className="text-lg">{sidebarCollapsed ? '→' : '←'}</span>
                   </button>
@@ -156,7 +156,7 @@ export default function AuthLayout({ children }) {
                   ))}
                 </div>
                 
-                <div className="p-4 border-t border-blue-200">
+                <div className="p-4 border-t border-primary-200">
                   <button
                     onClick={handleLogout}
                     className={`w-full flex items-center ${sidebarCollapsed ? 'justify-center px-2' : 'px-4'} py-3 text-base font-medium text-red-600 hover:bg-red-100 rounded-md transition-all duration-200`}
@@ -172,7 +172,7 @@ export default function AuthLayout({ children }) {
         )}
 
         {/* Main Content */}
-        <div className="flex-1 h-full overflow-auto" style={{width: '100%'}}>
+        <div className="flex-1 h-full overflow-auto flex items-center justify-center">
           {children}
         </div>
       </div>

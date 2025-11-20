@@ -68,6 +68,8 @@ model Project {
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
   
+  media       ProjectMedia[]
+
   @@map("projects")
 }
 
@@ -87,4 +89,70 @@ model ServiceRequest {
   updatedAt   DateTime @updatedAt
   
   @@map("service_requests")
+}
+
+model Service {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  imageUrl    String
+  icon        String
+  link        String
+  color       String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("services")
+}
+
+model HomepageHero {
+  id              Int      @id @default(autoincrement())
+  backgroundImage String
+  logoUrl         String
+  title           String
+  subtitle        String
+  cta1_text       String
+  cta1_link       String
+  cta2_text       String
+  cta2_link       String
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@map("homepage_hero")
+}
+
+model Media {
+  id        String    @id @default(cuid())
+  name      String
+  path      String
+  size      Int
+  type      String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  projects  ProjectMedia[]
+
+  @@map("media")
+}
+
+model ProjectMedia {
+  project   Project @relation(fields: [projectId], references: [id])
+  projectId String
+  media     Media   @relation(fields: [mediaId], references: [id])
+  mediaId   String
+
+  @@id([projectId, mediaId])
+}
+
+model Certification {
+  id          String   @id @default(cuid())
+  name        String
+  issuingBody String
+  dateIssued  DateTime
+  expiryDate  DateTime?
+  imageUrl    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("certifications")
 }

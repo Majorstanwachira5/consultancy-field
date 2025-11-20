@@ -3,12 +3,16 @@ const bcrypt = require('bcryptjs')
 const prisma = new PrismaClient()
 
 async function main() {
+  // Delete all existing data
+  await prisma.project.deleteMany({})
+  await prisma.serviceRequest.deleteMany({})
+  
   // Create default roles for consultancy
   const roles = [
     {
-      name: 'admin',
-      description: 'Full system access',
-      permissions: JSON.stringify({ all: true })
+      name: 'user',
+      description: 'Default user role',
+      permissions: JSON.stringify({ dashboard: true, documents: 'own' })
     },
     {
       name: 'consultant',
@@ -37,19 +41,19 @@ async function main() {
   }
 
   // Create admin user
-  const adminRole = await prisma.role.findUnique({ where: { name: 'admin' } })
-  if (adminRole) {
-    const hashedPassword = await bcrypt.hash(process.env.ADMIN_PASSWORD || 'AdminPass123', 12)
+  const userRole = await prisma.role.findUnique({ where: { name: 'user' } })
+  if (userRole) {
+    const hashedPassword = await bcrypt.hash(process.env.ADMIN_PASSWORD || 'password', 12)
     
     await prisma.user.upsert({
-      where: { email: process.env.ADMIN_EMAIL || 'admin@dataprotect.com' },
+      where: { email: process.env.NEXT_PUBLIC_ADMIN_EMAIL || 'majorstan20@gmail.com' },
       update: {},
       create: {
-        firstName: process.env.ADMIN_FIRST_NAME || 'System',
-        lastName: process.env.ADMIN_LAST_NAME || 'Administrator',
-        email: process.env.ADMIN_EMAIL || 'admin@dataprotect.com',
+        firstName: 'Admin',
+        lastName: 'User',
+        email: process.env.NEXT_PUBLIC_ADMIN_EMAIL || 'majorstan20@gmail.com',
         password: hashedPassword,
-        roleId: adminRole.id,
+        roleId: userRole.id,
         isActive: true,
         isVerified: true
       }
@@ -87,10 +91,8 @@ async function main() {
   ]
 
   for (const project of sampleProjects) {
-    await prisma.project.upsert({
-      where: { title: project.title },
-      update: {},
-      create: project
+    await prisma.project.create({
+      data: project
     })
   }
 

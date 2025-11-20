@@ -5,9 +5,8 @@
 
 /* Professional branding tokens */
 :root{
-  --brand-blue: #2563eb;
-  --brand-blue-dark: #1d4ed8;
-  --brand-green: #10b981;
+  --brand-blue: #82c8e5;
+  --brand-blue-dark: #6baac4;  --brand-green: #10b981;
   --brand-orange: #f59e0b;
   --brand-purple: #8b5cf6;
 }
